@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unite Supermarket Consultancy</title>
+  <link rel="icon" href="unite icon.jpeg">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; color: #333; scroll-behavior: smooth; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: #111;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo img { 
+     height: 45px;
+     padding-bottom:0px;
+     padding-left:15px;
+}
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover { color: #f5b400; }
+
+    .hero {
+      height: 90vh;
+      background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('unite bg1.jpeg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .hero h1 { font-size: 42px; margin-bottom: 15px; }
+    .hero p { font-size: 16px; opacity: 0.9; }
+
+    section { padding: 70px 40px; }
+
+    h2 { text-align: center;
+         color:#000080;
+         margin-bottom: 40px;
+}
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+    #partners .card img {
+      width: 120px;   /* adjust as needed */
+      height: auto;   /* keeps aspect ratio */
+}
+
+      #clients.card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+      #client .card img {
+      width: 120px;   /* adjust as needed */
+      height: auto;   /* keeps aspect ratio */
+}
+
+    .card:hover { transform: translateY(-8px); }
+
+    .card h3 { margin-bottom: 10px;
+      color:#000080;
+      text-align:center;
+ }
+
+    .contact-box {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+
+    button {
+      padding: 12px;
+      border: none;
+      background: #111;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover { background: #f5b400; color: black; }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      color: white;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+
+    .socials a:hover { color: #f5b400; }
+
+.part-socials a {
+      justify-items: center;
+      margin: 0 10px;
+      color: black;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+
+    .part-socials a:hover { color: #f5b400; }
+
+
+    /* WhatsApp Floating */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-size: 18px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media(max-width: 768px) {
+      header { flex-direction: column; gap: 10px; }
+      nav ul { flex-wrap: wrap; justify-content: center; }
+      .hero h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo"> <img src ="unite logo.png" alt="Unite Supermarket Consultancy"></div>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#services">Our Services</a></li>
+      <li><a href="#partners">Trusted Brands</a></li>
+      <li><a href="#clients">Clients</a></li>
+      <li><a href="#quote">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div>
+    <h1>Build Smarter Supermarkets</h1>
+    <p>Expert consultancy to grow your retail business efficiently.</p>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Who We Are</h3>
+      <p>We are a dedicated supermarket consultancy focused on helping entrepreneurs and retailers build successful, modern, and profitable retail stores. From small grocery outlets to large-format supermarkets, we bring the expertise needed to turn ideas into fully operational businesses.</p>
+    </div>
+    <div class="card">
+      <h3>Our Vision</h3>
+      <p>To be a leading force in transforming the retail landscape by setting new benchmarks in supermarket excellence. We envision a future where every retail space we shape reflects innovation, efficiency, and superior customer experience.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="grid">
+    <div class="card"><h3>Store Setup</h3>
+         <p>End-to-end supermarket setup support—from planning to launch—ensuring a smooth, efficient, and profitable store opening.</p></div>
+    <div class="card"><h3>Location Analysis</h3>
+         <p>Data-driven site selection to identify high-footfall, high-potential locations based on demographics, competition, and accessibility.</p></div>
+    <div class="card"><h3>Store Layout Planning</h3>
+         <p>Optimized floor planning designed to improve customer flow, maximize product visibility, and increase basket size.</p></div>
+    <div class="card"><h3>Hardware & Software Setup</h3>
+         <p>Complete installation of billing systems, POS machines, barcode scanners, weighing scales, and retail management software for seamless operations.</p></div>
+   <div class="card"><h3>Rack Arrangements</h3>
+         <p>Strategic shelving and gondola placement to ensure efficient space utilization and easy product access for customers.</p></div>
+    <div class="card"><h3>Product Display Arrangements</h3>
+         <p>Attractive and sales-focused merchandising techniques to highlight key products, boost impulse purchases, and enhance customer experience.</p></div>
+    <div class="card"><h3>Vendor Sourcing</h3>
+         <p>Reliable supplier network setup to ensure consistent product availability, competitive pricing, and quality assurance.</p></div>
+    <div class="card"><h3>Staff Training</h3>
+         <p>Comprehensive training programs covering billing, customer service, inventory handling, and store operations.</p></div>
+    <div class="card"><h3>Inventory Management</h3>
+         <p>Smart stock control systems to track inventory levels, reduce wastage, prevent stockouts, and improve profitability.</p></div>
+    <div class="card"><h3>Business Strategy</h3>
+         <p>Customized growth strategies including pricing, promotions, customer retention, and operational efficiency to scale your supermarket successfully.</p></div>
+  </div>
+</section>
+
+ <section id="partners">
+  <h2>Our Trusted Software Providers</h2>
+
+  <div class="grid">
+
+    <div class="card">
+<center>
+      <img src="unipro logo.png" alt="Unipro">
+    <div class="part-socials">
+    <a href="https://www.instagram.com/uniprotech/"target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/uniprotechsolut"target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.youtube.com/channel/UCePbycx46SYuPWexlsRcxGA"target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://wa.me/919566244611" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:salesenquiry@uniprotech.co.in" target="_blank"><i class="fas fa-envelope"></i></a>
+    </div>
+</center>
+    </div>
+
+    <div class="card">
+<center>
+      <img src="gofrugal logo.png" alt="GoFrugal">
+    <div class="part-socials">
+    <a href="https://www.instagram.com/gofrugalpos/"target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/gofrugal"target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.youtube.com/@Gofrugal-Retail-Software"target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://wa.me/917667011811" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:marketing-team@gofrugal.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    </div>
+</center>
+    </div>
+
+    <div class="card">
+<center>
+      <img src="bpal logo.png" alt="BPartner">
+    <div class="part-socials">
+    <a href="https://www.instagram.com/grup.softech.solutions?igsh=MTM0b3Foejhmdmp0bA=="target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/BPartnerSolutions"target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.youtube.com/channel/UCtQqZMCrFYBgE3X2n7s3IYA?view_as=subscriber"target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://wa.me/919944720765" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:support@bpartner.in" target="_blank"><i class="fas fa-envelope"></i></a>
+    </div>
+</center>
+    </div>
+
+    <div class="card">
+<center>
+      <img src="optech logo.png" alt="BPartner">
+    <div class="part-socials">
+    <a href="https://www.instagram.com/softwaresoptech/"target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="http://www.facebook.com/optechsoft"target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.youtube.com/channel/UCh9aKUtgVTVdbcwGuD1PqzQ"target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://wa.me/919842204667" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:optechsoftwares@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    </div>
+</center>
+    </div>
+  </div>
+</section>
+
+<section id="partners">
+  <h2>Our Trusted Rack Manufactures</h2>
+
+  <div class="grid">
+
+    <div class="card">
+<center>
+      <img src="don logo.png" alt="Don Racks">
+    <div class="part-socials">
+    <a href="https://www.instagram.com/donracksstoragesolutions/"target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/donracksstoragesolutions"target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.youtube.com/channel/UCAbS99glxnDaE61WPPeDifg"target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://api.whatsapp.com/send?phone=916374294284&text=Hi" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:sales@donracks.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    </div>
+</center>
+    </div>
+
+    <div class="card">
+<center>
+      <img src="kovai logo.jfif" alt="Kovai Racks">
+    <div class="part-socials">
+    <a href="https://www.instagram.com/kovai_racks/"target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.kovairacks.com/"target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.youtube.com/channel/UCRW_rg_RNVfLOHEjWQB0RaQ"target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://wa.me/919585457892" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:kovairacksmw@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    </div>
+</center>
+    </div>
+
+    <div class="card">
+<center>
+      <img src="jk logo.jfif" alt="VJ Racks">
+    <div class="part-socials">
+    <a href="https://www.instagram.com/jk_racks_offl/"target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.jkracks.in/"target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.youtube.com/@JKRACKSCOIMBATORE"target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://wa.me/918220812997" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:jkrackcbe@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    </div>
+</center>
+    </div>
+
+    <div class="card">
+<center>
+      <img src="fiya logo.png" alt="Fiya Racks">
+    <div class="part-socials">
+    <a href="https://www.instagram.com/fiya.racks?igsh=MW83enV0ZzhnNnpxOQ=="target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/fiya.racks/"target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.youtube.com/@royalracks6773"target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://wa.me/919789879539" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:fiyaracks@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    </div>
+</center>
+    </div>
+  </div>
+</section>
+
+<section id="quote">
+  <h2>Get a Quote</h2>
+  <div class="contact-box">
+    <input type="text" placeholder="Your Name" required>
+    <input type="text" placeholder="City" required>
+    <input type="tel" placeholder="Phone Number" required>
+
+    <label><input type="checkbox"> I already have a supermarket</label>
+    <label><input type="checkbox"> I want to start a new supermarket</label>
+
+    <button onclick="sendToWhatsApp()">Get Quote</button>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Unite Supermarket Consultancy</p>
+  <div class="socials">
+    <a href="https://www.instagram.com/unitesupermarketconsultancy"target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/share/1G6j9KgRZ9/"target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://youtube.com/@unitesupermarketconsultancy"target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://wa.me/919025499395" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:unite.retailconsultancy@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+      </div>
+</footer>
+
+<a href="https://wa.me/919025499395" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i> How can I help you? </a>
+
+<script>  
+function sendToWhatsApp(){  
+  const name = document.querySelector('#quote input[placeholder="Your Name"]');  
+  const city = document.querySelector('#quote input[placeholder="City"]');  
+  const phone = document.querySelector('#quote input[placeholder="Phone Number"]');  
+  const checkboxes = document.querySelectorAll('#quote input[type="checkbox"]');  
+
+  let isValid = true;
+
+  // Reset styles
+  [name, city, phone].forEach(input => input.style.border = "1px solid #ccc");
+
+  // Name validation
+  if(name.value.trim().length < 3){
+    name.style.border = "2px solid red";
+    isValid = false;
+  }
+
+  // City validation
+  if(city.value.trim().length < 2){
+    city.style.border = "2px solid red";
+    isValid = false;
+  }
+
+  // Phone validation (10 digits)
+  const phoneRegex = /^[0-9]{10}$/;
+  if(!phoneRegex.test(phone.value.trim())){
+    phone.style.border = "2px solid red";
+    isValid = false;
+  }
+
+  // Checkbox validation
+  let businessType = '';
+  let checked = false;
+
+  checkboxes.forEach(cb => {  
+    if(cb.checked){
+      businessType += cb.parentElement.innerText + ', ';
+      checked = true;
+    }
+  });
+
+  if(!checked){
+    alert("Please select a business type");
+    isValid = false;
+  }
+
+  // Stop if invalid
+  if(!isValid){
+    alert("Please fill all fields correctly");
+    return;
+  }
+ 
+}
+</script>
+
+</body>
+</html>

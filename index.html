@@ -375,8 +375,9 @@
     <input type="text" placeholder="City" required>
     <input type="tel" placeholder="Phone Number" required>
 
-    <label><input type="checkbox"> I already have a supermarket</label>
-    <label><input type="checkbox"> I want to start a new supermarket</label>
+<label><input type="radio" name="businessType"> I already have a supermarket</label>
+
+<label><input type="radio" name="businessType"> I want to start a new supermarket</label>
 
     <button onclick="sendToWhatsApp()">Get Quote</button>
   </div>
@@ -447,6 +448,76 @@ function sendToWhatsApp(){
     alert("Please fill all fields correctly");
     return;
   }
+
+  <script>  
+function sendToWhatsApp(){  
+  const name = document.querySelector('#quote input[placeholder="Your Name"]');  
+  const city = document.querySelector('#quote input[placeholder="City"]');  
+  const phone = document.querySelector('#quote input[placeholder="Phone Number"]');  
+  const checkboxes = document.querySelectorAll('#quote input[type="radio"]');
+
+  let isValid = true;
+
+  // Reset styles
+  [name, city, phone].forEach(input => input.style.border = "1px solid #ccc");
+  
+
+  // Name validation
+  if(name.value.trim().length < 3){
+    name.style.border = "2px solid red";
+    isValid = false;
+  }
+
+  // City validation
+  if(city.value.trim().length < 2){
+    city.style.border = "2px solid red";
+    isValid = false;
+  }
+
+  // Phone validation
+  const phoneRegex = /^[0-9]{10}$/;
+  if(!phoneRegex.test(phone.value.trim())){
+    phone.style.border = "2px solid red";
+    isValid = false;
+  }
+
+  // Checkbox validation
+  let businessType = '';
+  let checked = false;
+
+  checkboxes.forEach(cb => {  
+    if(cb.checked){
+      businessType += cb.parentElement.innerText + ', ';
+      checked = true;
+    }
+  });
+
+  if(!checked){
+    alert("Please select a business type");
+    isValid = false;
+  }
+
+  // Stop if invalid
+  if(!isValid){
+    alert("Please fill all fields correctly");
+    return;
+  }
+
+  // WhatsApp Message
+  let message =
+`*New Quote Request*%0A%0A
+*Name:* ${name.value}%0A
+*City:* ${city.value}%0A
+*Phone:* ${phone.value}%0A
+*Business Type:* ${businessType}`;
+
+  // Your WhatsApp Number
+  let whatsappNumber = "919025499395";
+
+  // Open WhatsApp
+  window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+}
+</script>
  
 }
 </script>
